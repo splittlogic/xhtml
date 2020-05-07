@@ -1,0 +1,33 @@
+{
+    "name": "splittlogic/xhtml",
+    "description": "Laravel XHTML Basic Generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SplittLogic",
+            "email": "splittlogic@gmail.com",
+            "homepage": "https://github.com/splittlogic"
+        }
+    ],
+    "homepage": "https://github.com/splittlogic/xhtml",
+    "keywords": ["Laravel", "xhtml", "html", "w3"],
+    "require": {
+      "illuminate/support": "~5|~6|~7"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "splittlogic\\xhtml\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "splittlogic\\xhtml\\xhtmlServiceProvider"
+            ],
+            "aliases": {
+                "xhtml": "splittlogic\\xhtml\\Facades\\xhtml"
+            }
+        }
+    }
+}
