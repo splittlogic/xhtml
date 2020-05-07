@@ -28,7 +28,7 @@
             "aliases": {
                 "xhtml": "splittlogic\\xhtml\\Facades\\xhtml"
             }
-        }
+        },
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
