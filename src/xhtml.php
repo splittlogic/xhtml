@@ -369,6 +369,13 @@ $x->base();';
       $out = $x->dd('Text of descriptive detail')->html();
       $x->elrow($el,$desc,$ex,$out);
 
+      // del element
+      $el = 'del';
+      $desc = 'Deleted text';
+      $ex = '$x->del(' . "'Text to be treated as deleted text'" . ');';
+      $out = $x->del('Text to be treated as deleted text')->html();
+      $x->elrow($el,$desc,$ex,$out);
+
       // dfn element
       $el = 'dfn';
       $desc = 'Definition';
@@ -528,6 +535,13 @@ $x->input();';
       $out = $x->input()->html();
       $x->elrow($el,$desc,$ex,$out);
 
+      // ins element
+      $el = 'ins';
+      $desc = 'Insert (addition)';
+      $ex = '$x->ins(' . "'Text treated as an addition'" . ');';
+      $out = $x->ins('Text treated as an addition')->html();
+      $x->elrow($el,$desc,$ex,$out);
+
       // js element
       $el = 'JS';
       $desc = 'JS script element - This element will automatically be added when the footer element is called.';
@@ -570,6 +584,13 @@ $x->input();';
 $x->link();';
       $x->href('https://link/to/css/file.css');
       $out = $x->link()->html();
+      $x->elrow($el,$desc,$ex,$out);
+
+      // mark element
+      $el = 'mark';
+      $desc = 'Mark (highlight)';
+      $ex = '$x->mark(' . "'Text to mark (highlight)'" . ');';
+      $out = $x->mark('Text to mark (highlight)')->html();
       $x->elrow($el,$desc,$ex,$out);
 
       // meta element
@@ -666,6 +687,13 @@ $x->param();';
       $desc = 'Quote';
       $ex = '$x->q(' . "'Text to quote'" . ');';
       $out = $x->q('Text to quote')->html();
+      $x->elrow($el,$desc,$ex,$out);
+
+      // s element
+      $el = 's';
+      $desc = 's (strikethrough)';
+      $ex = '$x->s(' . "'Text to strikethrough'" . ');';
+      $out = $x->s('Text to strikethrough')->html();
       $x->elrow($el,$desc,$ex,$out);
 
       // samp element
@@ -817,6 +845,13 @@ $x->tr();';
       $desc = 'Teletype text';
       $ex = '$x->tt(' . "'Teletype text content'" . ');';
       $out = $x->tt('Teletype text content')->html();
+      $x->elrow($el,$desc,$ex,$out);
+
+      // u element
+      $el = 'u';
+      $desc = 'u (underline)';
+      $ex = '$x->u(' . "'Text to underline'" . ');';
+      $out = $x->u('Text to underline')->html();
       $x->elrow($el,$desc,$ex,$out);
 
       // ul element

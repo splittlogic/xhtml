@@ -28,6 +28,7 @@
 | code()        - Create code element
 | css()         - Create CSS link element
 | dd()          - Create dd (detail description) element
+| del()         - Create del element
 | dfn()         - Create dfn (defining) element
 | div()         - Create div element
 | dl()          - Create dl (description list) element
@@ -49,12 +50,14 @@
 | i()           - Create i (italic) element
 | img()         - Create img (image) element
 | input()       - Create input element
+| ins()         - Create ins element
 | js()          - Create JS script element
 | kbd()         - Create kbd (keyboard input) element
 | labeltag()    - Create label element
 | legend()      - Create legend element
 | li()          - Create li (list) element
 | link()        - Create link tag
+| mark()        - Create mark element
 | meta()        - Create meta tag
 | noscript()    - Create noscript element
 | object()      - Create an object tag
@@ -66,6 +69,7 @@
 | pagetitle()   - Create title tag
 | pre()         - Create pre element
 | q()           - Create q (quotation) element
+| s()           - Create s (strikethrough) element
 | samp()        - Create samp (sample) element
 | script()      - Create script element
 | select()      - Create select element
@@ -83,6 +87,7 @@
 | thead()       - Create thead element
 | tr()          - Create tr (table row) element
 | tt()          - Create tt (teletype text) element
+| u()           - Create u (underline) element 
 | ul()          - Create ul (unordered list) element
 | var()         - Create var (variable) element
 | xml()         - Create xml element
@@ -345,6 +350,16 @@ trait elements
 
     // Add to dls saved
     $this->set('dls',$this->html(),'add');
+
+    return $this;
+  }
+
+
+  // Create del element
+  public function del($content = null)
+  {
+    // Create element
+    $this->tag('del',$content);
 
     return $this;
   }
@@ -665,6 +680,16 @@ trait elements
   }
 
 
+  // Create ins element
+  public function ins($content = null)
+  {
+    // Create element
+    $this->tag('ins',$content);
+
+    return $this;
+  }
+
+
   // Create JS element
   public function js($link = null, $location = null)
   {
@@ -737,6 +762,16 @@ trait elements
 
     // Set element variable
     $this->setBlade('link','add');
+
+    return $this;
+  }
+
+
+  // Create mark element
+  public function mark($content = null)
+  {
+    // Create element
+    $this->tag('mark',$content);
 
     return $this;
   }
@@ -926,6 +961,16 @@ trait elements
   {
     // Create element
     $this->tag('q',$content);
+
+    return $this;
+  }
+
+
+  // Create s (strikethrough) element
+  public function s($content = null)
+  {
+    // Create element
+    $this->tag('s',$content);
 
     return $this;
   }
@@ -1241,6 +1286,16 @@ trait elements
   {
     // Create element
     $this->tag('tt',$content);
+
+    return $this;
+  }
+
+
+  // Create u (underline) element
+  public function u($content = null)
+  {
+    // Create element
+    $this->tag('u',$content);
 
     return $this;
   }
