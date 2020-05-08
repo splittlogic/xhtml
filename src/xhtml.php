@@ -2083,6 +2083,7 @@ config
 content *
 dls ***
 eol
+extrafields *
 html
 id
 idcount
