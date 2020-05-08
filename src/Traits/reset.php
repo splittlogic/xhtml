@@ -50,6 +50,7 @@ trait reset
     $this->set('attributes',null);
     $this->set('classes',null);
     $this->set('content',null);
+    $this->set('extrafields',null);
     $this->set('IDtemp',null);
 
     // config & eol is not reset here to keep formatting

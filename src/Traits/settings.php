@@ -20,6 +20,7 @@
 | attribute()         - Set a unique attribute for the element
 | axis()              - Set axis attribute
 | charset()           - Set charset attribute
+| checked()           - Set checked field
 | cite()              - Set cite attribute
 | class()             - Set class for element
 | classid()           - Set classid attribute
@@ -30,7 +31,10 @@
 | config()            - Set config variable
 | content()           - Set content for element
 | data()              - Set data attribute
+| declare()           - Set declare field
+| defer()             - Set defer field
 | description()       - Set description for page
+| disabled()          - Set disabled field
 | encoding()          - Set encoding attribute
 | enctype()           - Set enctype attribute
 | eol()               - Toggle eol (End of Line) setting
@@ -47,6 +51,7 @@
 | maxlength()         - Set maxlength attribute
 | media()             - Set media attribute
 | method()            - Set method attribute
+| multiple()          - Set multiple field
 | name()              - Set name attribute
 | onblur()            - Set onblur attribute
 | onchange()          - Set onchange attribute
@@ -67,12 +72,14 @@
 | onsubmit()          - Set onsubmit attribute
 | onunload()          - Set onunload attribute
 | profile()           - Set profile attribute
+| readonly()          - Set readonly field
 | rel()               - Set rel attribute
 | rev()               - Set rev attribute
 | rows()              - Set rows attribute
 | rowspan()           - Set rowspan attribute
 | scheme()            - Set scheme attribute
 | scope()             - Set scope attribute
+| selected()          - Set selected field
 | size()              - Set size attribute
 | src()               - Set src attribute
 | standby()           - Set standby attribute
@@ -223,6 +230,13 @@ trait settings
   }
 
 
+  // Set checked attribute
+  public function checked()
+  {
+    $this->setExtraField('checked');
+  }
+
+
   // Set cite attribute
   public function cite($cite = null)
   {
@@ -330,6 +344,20 @@ trait settings
   }
 
 
+  // Set declare field
+  public function declare()
+  {
+    $this->setExtraField('declare');
+  }
+
+
+  // Set defer field
+  public function defer()
+  {
+    $this->setExtraField('defer');
+  }
+
+
   // Set description for page
   public function description($desc = null)
   {
@@ -341,6 +369,13 @@ trait settings
     }
     // Return this
     return $this;
+  }
+
+
+  // Set disabled field
+  public function disabled()
+  {
+    $this->setExtraField('disabled');
   }
 
 
@@ -522,6 +557,13 @@ trait settings
       $this->attribute(['method' => $method]);
     }
     return $this;
+  }
+
+
+  // Set multiple field
+  public function multiple()
+  {
+    $this->setExtraField('multiple');
   }
 
 
@@ -745,6 +787,13 @@ trait settings
   }
 
 
+  // Set readonly field
+  public function readonly()
+  {
+    $this->setExtraField('readonly');
+  }
+
+
   // Set rel attribute
   public function rel($rel = null)
   {
@@ -808,6 +857,13 @@ trait settings
       $this->attribute(['scope' => $scope]);
     }
     return $this;
+  }
+
+
+  // Set selected field
+  public function selected()
+  {
+    $this->setExtraField('selected');
   }
 
 

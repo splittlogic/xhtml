@@ -25,6 +25,7 @@ trait save
     'attributes',
     'classes',
     'content',
+    'extrafields',
     'idtemp',
     'pagelocation',
     'thead',

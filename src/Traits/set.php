@@ -91,6 +91,16 @@ trait set
   }
 
 
+  // Set extra fields for element
+  private function setExtraField($field = null)
+  {
+    if ($field)
+    {
+      $this->set('extrafields',$this->get('extrafields') . ' ' . $field);
+    }
+  }
+
+
   // Set html variable
   private function setHtml($html = null)
   {

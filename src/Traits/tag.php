@@ -10,7 +10,7 @@
 |   reset
 |   set
 |   setget
-|   settings 
+|   settings
 |
 | tag()     - Create given html tag
 | tagline() - Create given html tag line
@@ -60,7 +60,8 @@ trait tag
     $html[] = '<' . $tag
             . $id
             . $classes
-            . $attributes . '>';
+            . $attributes
+            . $this->get('extrafields') . '>';
     $html[] = $this->get('content');
     $html[] = '</' . $tag . '>';
 
@@ -118,6 +119,7 @@ trait tag
           . $classes
           . $attributes
           . $this->get('content')
+          . $this->get('extrafields')
           . $suffix . '>';
 
     // Set element html string
