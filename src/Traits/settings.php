@@ -30,7 +30,7 @@
 | config()            - Set config variable
 | content()           - Set content for element
 | data()              - Set data attribute
-| description()       - Set description for page 
+| description()       - Set description for page
 | encoding()          - Set encoding attribute
 | enctype()           - Set enctype attribute
 | eol()               - Toggle eol (End of Line) setting
@@ -42,6 +42,7 @@
 | inputmode()         - Set inputmode attribute
 | keyword()           - Add keyword for page
 | label()             - Set label attribute
+| lang()              - Set lang attribute
 | longdesc()          - Set longdesc attribute
 | maxlength()         - Set maxlength attribute
 | media()             - Set media attribute
@@ -464,6 +465,17 @@ trait settings
     if ($label)
     {
       $this->attribute(['label' => $label]);
+    }
+    return $this;
+  }
+
+
+  // Set lang attribute
+  public function lang($label = null)
+  {
+    if ($label)
+    {
+      $this->attribute(['lang' => $label]);
     }
     return $this;
   }

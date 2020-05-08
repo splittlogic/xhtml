@@ -110,6 +110,12 @@ trait config
       $this->hreflang($config['hreflang']);
     }
 
+    // lang
+    if (isset($config['lang']))
+    {
+      $this->lang($config['lang']);
+    }
+
     // Check for location
     if (isset($config['location']))
     {

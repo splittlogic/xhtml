@@ -62,9 +62,9 @@ class xhtmlServiceProvider extends ServiceProvider
         ], 'xhtml.config');
 
         // Publishing the views.
-        $this->publishes([
+        /*$this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/splittlogic'),
-        ], 'xhtml.views');
+        ], 'xhtml.views');*/
 
         // Publishing assets.
         /*$this->publishes([
