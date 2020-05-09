@@ -338,7 +338,7 @@ trait config
     // Check for base
     if (is_null($this->get('blade-base')))
     {
-      if (!is_null(config('xhtml.' . $this->get('config') . '.base')))
+      if (!is_null(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.base')))
       {
         $this->base();
         if (!is_null($this->get('blade-base')))
@@ -354,7 +354,7 @@ trait config
     if (is_null($this->get('blade-title')))
     {
       // Check for title config
-      if (!is_null(config('xhtml.' . $this->get('config') . '.title')))
+      if (!is_null(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.title')))
       {
         $this->pagetitle();
         $content .= $this->html();
@@ -380,10 +380,10 @@ trait config
     if (is_null($this->get('description')))
     {
       // Check for config description
-      if (!is_null(config('xhtml.' . $this->get('config') . '.description')))
+      if (!is_null(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.description')))
       {
         $this->meta('name="description" '
-          . 'content="' . config('xhtml.' . $this->get('config') . '.description') . '"');
+          . 'content="' . config($this->get('splittlogicapp') . '.' . $this->get('config') . '.description') . '"');
         $content .= $this->html();
       }
     } else {
@@ -396,10 +396,10 @@ trait config
     if (is_null($this->get('keywords')))
     {
       // Check for config description
-      if (!is_null(config('xhtml.' . $this->get('config') . '.keywords')))
+      if (!is_null(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.keywords')))
       {
         $this->meta('name="keywords" '
-          . 'content="' . config('xhtml.' . $this->get('config') . '.keywords') . '"');
+          . 'content="' . config($this->get('splittlogicapp') . '.' . $this->get('config') . '.keywords') . '"');
         $content .= $this->html();
       }
     } else {
@@ -505,7 +505,7 @@ trait config
     if ($tag)
     {
       // Set config
-      $config = config('xhtml.' . $this->get('config') . '.' . $tag);
+      $config = config($this->get('splittlogicapp') . '.' . $this->get('config') . '.' . $tag);
 
       // Check for config
       if ($config)

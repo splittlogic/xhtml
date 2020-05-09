@@ -10,9 +10,10 @@
 |   setget
 |   settings
 |
-| checkConfig()   - Check config file settings
-| checkContent()  - Verify content variable is set
-| checkEOL()      - Check eol settings and return processed content
+| checkSplittlogicApp() - Check splittlogic app setting
+| checkConfig()         - Check config file settings
+| checkContent()        - Verify content variable is set
+| checkEOL()            - Check eol settings and return processed content
 */
 
 
@@ -23,9 +24,24 @@ trait check
 {
 
 
+  // Check splittlogic app
+  private function checkSplittlogicApp()
+  {
+    // Check if app is set
+    if (is_null($this->get('splittlogicapp')))
+    {
+      // Set xhtml as the default
+      $this->set('splittlogicapp','xhtml');
+    }
+  }
+
+
   // Check config file settings
   private function checkConfig($tag = null)
   {
+    // Check if splittlogic app is set
+    $this->checkSplittlogicApp();
+
     // Check if config is set
     if (is_null($this->get('config')))
     {
@@ -39,7 +55,7 @@ trait check
     if ($tag)
     {
       // Check if config tag file is set
-      if (config('xhtml.' . $this->get('config') . '.' . $tag) || $tag == 'head')
+      if (config($this->get('splittlogicapp') . '.' . $this->get('config') . '.' . $tag) || $tag == 'head')
       {
         if ($tag == 'xml' ||
           $tag == 'body' ||
@@ -48,10 +64,10 @@ trait check
           $tag == 'title' ||
           $tag == 'base')
         {
-          $this->configStandard(config('xhtml.' . $this->get('config') . '.' . $tag),true);
+          $this->configStandard(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.' . $tag),true);
         // Check for head
         } else if ($tag == 'head') {
-          $this->configHead(config('xhtml.' . $this->get('config') . '.' . $tag));
+          $this->configHead(config($this->get('splittlogicapp') . '.' . $this->get('config') . '.' . $tag));
         }
       }
     }

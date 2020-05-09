@@ -87,7 +87,7 @@
 | thead()       - Create thead element
 | tr()          - Create tr (table row) element
 | tt()          - Create tt (teletype text) element
-| u()           - Create u (underline) element 
+| u()           - Create u (underline) element
 | ul()          - Create ul (unordered list) element
 | var()         - Create var (variable) element
 | xml()         - Create xml element
@@ -175,6 +175,12 @@ trait elements
   // Create base element
   public function base($content = null)
   {
+    // Check for id
+    if (is_null($this->get('IDtemp')))
+    {
+      $this->id(false);
+    }
+    
     if ($content)
     {
       // Verify content is set
