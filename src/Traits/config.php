@@ -544,7 +544,10 @@ trait config
                 // Check for CSS
                 if ($tag == 'css')
                 {
+                  // Set proper tag
                   $tag = 'link';
+                  // Set rel
+                  $this->rel('stylesheet');
                 }
                 $this->tagline($tag,'');
               }
