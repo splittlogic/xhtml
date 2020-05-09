@@ -530,6 +530,7 @@ trait config
                 } else {
                   if (isset($elem['content']))
                   {
+                    $this->configAttributes($elem);
                     $this->tagline('meta','',$elem['content']);
                   } else {
                     $this->configAttributes($elem);
