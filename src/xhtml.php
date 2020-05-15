@@ -1048,6 +1048,13 @@ $x->xml();';
       $out = 'data="value"';
       $x->elrow($el,$desc,$ex,$out);
 
+      // disabled attribute
+      $el = 'disabled()';
+      $desc = 'Disabled';
+      $ex = '$x->disabled();';
+      $out = 'disabled"';
+      $x->elrow($el,$desc,$ex,$out);
+
       // encoding attribute
       $el = 'encoding()';
       $desc = 'Encoding';
@@ -1111,11 +1118,26 @@ $x->xml();';
       $out = 'inputmode="value"';
       $x->elrow($el,$desc,$ex,$out);
 
+      // keyword
+      $el = 'keyword()';
+      $desc = 'Add keywords to page meta';
+      $ex = '$x->keyword(' . "'word 1'" . ');
+$x->keyword(' . "'word 2'" . ');';
+      $out = '<meta name="keywords" content="word 1, word 2">';
+      $x->elrow($el,$desc,$ex,$out);
+
       // label attribute
       $el = 'label()';
       $desc = 'Label';
       $ex = '$x->label(' . "'Name'" . ');';
       $out = 'label="Name"';
+      $x->elrow($el,$desc,$ex,$out);
+
+      // lang attribute
+      $el = 'lang()';
+      $desc = 'Language';
+      $ex = '$x->lang(' . "'en'" . ');';
+      $out = 'label="en"';
       $x->elrow($el,$desc,$ex,$out);
 
       // longdesc attribute
@@ -1144,6 +1166,13 @@ $x->xml();';
       $desc = 'Method';
       $ex = '$x->method(' . "'get'" . ');';
       $out = 'method="get"';
+      $x->elrow($el,$desc,$ex,$out);
+
+      // multiple attribute
+      $el = 'multiple()';
+      $desc = 'multiple attribute field';
+      $ex = '$x->multiple();';
+      $out = '<... mupltiple>';
       $x->elrow($el,$desc,$ex,$out);
 
       // name attribute
