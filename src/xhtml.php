@@ -2095,6 +2095,14 @@ $x->keyword(' . "'word 3'" . ');';
   }
 
 
+  // All for nesting elements
+  public function z($value = null)
+  {
+    $this->set('znest',$value);
+    return $this;
+  }
+
+
 }
 
 /*
@@ -2130,6 +2138,7 @@ tds ***
 thead ***
 ths ***
 trs ***
+znest *
 
 * = Need to reset
 ** = Need to reset in element

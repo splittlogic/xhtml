@@ -28,6 +28,20 @@ trait setget
     // Check if name is set
     if ($name)
     {
+      // Check for znest
+      if ($name !== 'znest'
+      && $name !== 'html'
+      && $name !== 'eol'
+      && $name !== 'id'
+      && $name !== 'IDtemp'
+      && $name !== 'idcount')
+      {
+        if (!is_null($this->get('znest')))
+        {
+          $name = $this->get('znest') . '-' . $name;
+        }
+      }
+
       // Check if variable exists
       if (isset(self::$splittlogic[$name]))
       {
@@ -49,6 +63,21 @@ trait setget
     // Check if name is set
     if ($name)
     {
+      // Check for znest
+      if ($name !== 'html'
+      && $name !== 'znest'
+      && $name !== 'eol'
+      && $name !== 'id'
+      && $name !== 'IDtemp'
+      && $name !== 'idcount')
+      {
+        // Check if znest variable is set
+        if (!is_null($this->get('znest')))
+        {
+          $name = $this->get('znest') . '-' . $name;
+        }
+      }
+
       // Check for add type
       if ($type == 'add')
       {
