@@ -54,7 +54,7 @@ trait save
     foreach ($this->savevariables as $variable)
     {
       $this->set($variable,$this->get('save-' . $name . '-' . $variable));
-      $this->set('save-' . $variable,null);
+      $this->set('save-' . $name . '-' . $variable,null);
     }
   }
 

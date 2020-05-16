@@ -29,12 +29,14 @@ trait setget
     if ($name)
     {
       // Check for znest
-      if ($name !== 'znest'
-      && $name !== 'html'
+      if ($name !== 'config'
       && $name !== 'eol'
+      && $name !== 'html'
       && $name !== 'id'
       && $name !== 'IDtemp'
-      && $name !== 'idcount')
+      && $name !== 'idcount'
+      && $name !== 'splittlogicapp'
+      && $name !== 'znest')
       {
         if (!is_null($this->get('znest')))
         {
@@ -64,12 +66,14 @@ trait setget
     if ($name)
     {
       // Check for znest
-      if ($name !== 'html'
-      && $name !== 'znest'
+      if ($name !== 'config'
       && $name !== 'eol'
+      && $name !== 'html'
       && $name !== 'id'
       && $name !== 'IDtemp'
-      && $name !== 'idcount')
+      && $name !== 'idcount'
+      && $name !== 'splittlogicapp'
+      && $name !== 'znest')
       {
         // Check if znest variable is set
         if (!is_null($this->get('znest')))

@@ -72,6 +72,7 @@ table {
       $x->li($x->a('Config','#Config')->html());
       $x->li($x->a('Blade','#Blade')->html());
       $x->li($x->a('Array To Table','#Arraytotable')->html());
+      $x->li($x->a('Z (Nesting Elements)','#Zfunction')->html());
     $content .= $x->ul()->html();
 
     // Calling xhtml Class
@@ -2065,6 +2066,49 @@ $x->keyword(' . "'word 3'" . ');';
     $data['row3'][] = 'data 15';
 
     $content .= $x->arraytotable($data,$headers);
+    $content .= $x->br()->html();
+
+    // Array to Table
+    $content .= $x->h2(
+      $x->name('Zfunction')
+        ->id('Zfunction')
+        ->a('Z (Nesting Elements)')
+        ->html()
+    )->html();
+
+    $content .= 'Add z(' . "'name'" . ') in front of elements that are saved to be able to nest them.';
+    $content .= $x->br()->html();
+    $content .= $x->br()->html();
+
+    $x->li('First 1');
+      $x->z('2')->li('Second 1');
+      $x->z('2')->li('Second 2');
+      $x->z('2')->li('Second 3');
+      $x->z('2')->ul();
+    $x->li('First 2' . $x->html());
+    $x->li('First 3');
+    $x->ul();
+
+    $list = $x->html();
+
+    $x->th('Example');
+    $x->th('Output');
+    $x->tr();
+
+    $x->td($x->pre('
+    $x->li(' . "'First 1'" . ');
+      $x->z(' . "'2'" . ')->li(' . "'Second 1'" . ');
+      $x->z(' . "'2'" . ')->li(' . "'Second 2'" . ');
+      $x->z(' . "'2'" . ')->li(' . "'Second 3'" . ');
+      $x->z(' . "'2'" . ')->ul();
+    $x->li(' . "'First 2'" . ' . $x->html());
+    $x->li(' . "'First 3'" . ');
+    $x->ul();
+    ')->html());
+    $x->td($list);
+    $x->tr();
+
+    $content .= $x->table()->html();
 
     return $content;
   }

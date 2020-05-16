@@ -180,7 +180,7 @@ trait elements
     {
       $this->id(false);
     }
-    
+
     if ($content)
     {
       // Verify content is set
@@ -351,11 +351,14 @@ trait elements
   // Create dd element
   public function dd($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('dd',$content);
 
     // Add to dls saved
-    $this->set('dls',$this->html(),'add');
+    $this->set($z . 'dls',$this->html(),'add');
 
     return $this;
   }
@@ -439,11 +442,14 @@ trait elements
   // Create dt element
   public function dt($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('dt',$content);
 
     // Add to dls saved
-    $this->set('dls',$this->html(),'add');
+    $this->set($z . 'dls',$this->html(),'add');
 
     return $this;
   }
@@ -744,11 +750,14 @@ trait elements
   // Create li element
   public function li($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('li',$content);
 
     // Add to lis saved
-    $this->set('lis',$this->html(),'add');
+    $this->set($z . 'lis',$this->html(),'add');
 
     return $this;
   }
@@ -897,11 +906,14 @@ trait elements
   // Create option element
   public function option($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('option',$content);
 
     // Save option created
-    $this->set('options',$this->html(),'add');
+    $this->set($z . 'options',$this->html(),'add');
 
     return $this;
   }
@@ -1134,6 +1146,9 @@ trait elements
   // Create table element
   public function table($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Save current settings
     $this->save('table');
 
@@ -1147,11 +1162,11 @@ trait elements
       $content = '';
 
       // Check if rows are set
-      if (!is_null($this->get('save-table-trs')))
+      if (!is_null($this->get($z . 'save-table-trs')))
       {
-        if (is_array($this->get('save-table-trs')))
+        if (is_array($this->get($z . 'save-table-trs')))
         {
-          foreach ($this->get('save-table-trs') as $trs)
+          foreach ($this->get($z . 'save-table-trs') as $trs)
           {
             $content .= $trs;
           }
@@ -1159,10 +1174,10 @@ trait elements
       }
 
       // Check if table headers are set
-      if (!is_null($this->get('save-table-thead')))
+      if (!is_null($this->get($z . 'save-table-thead')))
       {
         // Set table header
-        $this->thead($this->get('save-table-thead'));
+        $this->thead($this->get($z . 'save-table-thead'));
         $thead = $this->html();
 
         // Put rows into a body
@@ -1195,11 +1210,14 @@ trait elements
   // Create td element
   public function td($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('td',$content);
 
     // Save table cell created
-    $this->set('tds',$this->html(),'add');
+    $this->set($z . 'tds',$this->html(),'add');
 
     return $this;
   }
@@ -1218,11 +1236,14 @@ trait elements
   // Create th element
   public function th($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Create element
     $this->tag('th',$content);
 
     // Save table cell created
-    $this->set('ths',$this->html(),'add');
+    $this->set($z . 'ths',$this->html(),'add');
 
     return $this;
   }
@@ -1241,6 +1262,9 @@ trait elements
   // Create tr element
   public function tr($content = null)
   {
+    // Check for znest value
+    $z = $this->checkz();
+
     // Declare thead setting
     $thead = false;
 
@@ -1278,9 +1302,9 @@ trait elements
     // Save table row created
     if ($thead == true)
     {
-      $this->set('thead',$this->html());
+      $this->set($z . 'thead',$this->html());
     } else {
-      $this->set('trs',$this->html(),'add');
+      $this->set($z . 'trs',$this->html(),'add');
     }
 
     return $this;

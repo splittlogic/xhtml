@@ -41,6 +41,9 @@ trait reset
       $this->set('trs',null);
       $this->set('thead',null);
     }
+
+    // Last variable to reset
+    $this->set('znest',null);
   }
 
 
@@ -52,8 +55,7 @@ trait reset
     $this->set('content',null);
     $this->set('extrafields',null);
     $this->set('IDtemp',null);
-    $this->set('znest',null);
-
+    
     // config & eol is not reset here to keep formatting
     // throughout all elements
   }

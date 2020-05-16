@@ -114,4 +114,17 @@ trait check
   }
 
 
+  // Check znest value
+  private function checkz()
+  {
+    if (is_null($this->get('znest')))
+    {
+      $znest = null;
+    } else {
+      $znest = $this->get('znest') . '-';
+    }
+    return $znest;
+  }
+
+
 }

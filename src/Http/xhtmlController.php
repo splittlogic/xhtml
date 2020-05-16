@@ -15,8 +15,6 @@ class xhtmlController extends Controller
 
     $content = xhtml::about();
 
-    //$content .= xhtml::x()->h1('test')->html();
-
     return view('xhtml::blank',['content' => $content]);
 
   }
