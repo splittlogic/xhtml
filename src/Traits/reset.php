@@ -21,7 +21,7 @@ trait reset
 
 
   // Reset class variables based on tag element requested
-  private function reset($tag)
+  public function reset($tag)
   {
     // Reset Settings
     $this->resetSettings();
@@ -55,7 +55,7 @@ trait reset
     $this->set('content',null);
     $this->set('extrafields',null);
     $this->set('IDtemp',null);
-    
+
     // config & eol is not reset here to keep formatting
     // throughout all elements
   }
