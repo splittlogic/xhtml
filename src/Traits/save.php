@@ -47,6 +47,16 @@ trait save
   }
 
 
+  // Add a variable to the save function
+  public function savevariable($var = null)
+  {
+    if ($var)
+    {
+      $this->savevariables[] = $var;
+    }
+  }
+
+
   // Restore settings for requested element
   public function restore($name)
   {

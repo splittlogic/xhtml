@@ -516,6 +516,11 @@ trait config
           // Cycle through elements
           foreach ($config as $elem)
           {
+            //Check original tag
+            if (isset($original_tag))
+            {
+              $tag = $original_tag;
+            }
             // Create proper tag
             if ($tag == 'css' || $tag == 'link' || $tag == 'meta')
             {
@@ -546,6 +551,8 @@ trait config
                 {
                   // Set proper tag
                   $tag = 'link';
+                  // Set original tag
+                  $original_tag = 'css';
                   // Set rel
                   $this->rel('stylesheet');
                 }
