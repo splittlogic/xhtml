@@ -26,6 +26,7 @@
 | caption()     - Create caption element
 | citetag()     - Create cite element
 | code()        - Create code element
+| comment()     - Create comment element
 | css()         - Create CSS link element
 | dd()          - Create dd (detail description) element
 | del()         - Create del element
@@ -109,7 +110,11 @@ trait elements
       // Check if http or https is set
       if (substr($link,0,4) !== 'http' && substr($link,0,5) !== 'https')
       {
-        $link = url()->current() . '/' . $link;
+        // Check if # is set
+        if (substr($link,0,1) !== '#')
+        {
+          $link = url()->current() . '/' . $link;
+        }
       }
 
       $this->href($link);
@@ -323,6 +328,17 @@ trait elements
     // Create element
     $this->tag('code',$content);
 
+    return $this;
+  }
+
+
+  // Create comment element
+  public function comment($comment = null)
+  {
+    $comment = '<!-- ' . $comment . ' -->';
+
+    $this->setHtml($comment);
+    
     return $this;
   }
 
