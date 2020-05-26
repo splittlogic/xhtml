@@ -234,6 +234,7 @@ trait settings
   public function checked()
   {
     $this->setExtraField('checked');
+    return $this;
   }
 
 
