@@ -338,7 +338,7 @@ trait elements
     $comment = '<!-- ' . $comment . ' -->';
 
     $this->setHtml($comment);
-    
+
     return $this;
   }
 
