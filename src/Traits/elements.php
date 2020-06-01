@@ -111,10 +111,8 @@ trait elements
       if (substr($link,0,4) !== 'http' && substr($link,0,5) !== 'https')
       {
         // Check if # is set
-        if (substr($link,0,1) == '#')
+        if (substr($link,0,1) !== '#')
         {
-          $link = url()->current() . '/' . $link;
-        } else {
           $link = url($link);
         }
       }
