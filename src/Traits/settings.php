@@ -960,6 +960,25 @@ trait settings
   }
 
 
+  // Set thead classes
+  public function theadclass($class = null)
+  {
+    if ($class)
+    {
+      if (is_array($class))
+      {
+        foreach ($class as $c)
+        {
+          $this->set('theadclasses',$c,'add');
+        }
+      } else {
+        $this->set('theadclasses',$class,'add');
+      }
+    }
+    return $this;
+  }
+
+
   // Set type attribute
   public function type($type = null)
   {

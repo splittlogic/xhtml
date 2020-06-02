@@ -40,6 +40,9 @@ trait reset
     } else if ($tag == 'table') {
       $this->set('trs',null);
       $this->set('thead',null);
+      $this->set('theadclasses',null);
+    } else if ($tag == 'thead') {
+      $this->set('theadclasses',null);
     }
 
     // Last variable to reset

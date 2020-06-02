@@ -1192,6 +1192,9 @@ trait elements
       // Check if table headers are set
       if (!is_null($this->get($z . 'save-table-thead')))
       {
+        // Set thead classes
+        $this->set('theadclasses',$this->get($z . 'save-table-theadclasses'));
+        
         // Set table header
         $this->thead($this->get($z . 'save-table-thead'));
         $thead = $this->html();
@@ -1268,6 +1271,18 @@ trait elements
   // Create thead element
   public function thead($content = null)
   {
+    // Check for thead classes
+    if (!is_null($this->get('theadclasses')))
+    {
+      if (is_array($this->get('theadclasses')))
+      {
+        foreach ($this->get('theadclasses') as $class)
+        {
+          $this->class($class);
+        }
+      }
+    }
+
     // Create element
     $this->tag('thead',$content);
 

@@ -29,6 +29,7 @@ trait save
     'idtemp',
     'pagelocation',
     'thead',
+    'theadclasses',
     'trs',
   );
 
