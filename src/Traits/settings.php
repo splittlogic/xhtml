@@ -949,12 +949,20 @@ trait settings
   }
 
 
-  // Set title attribute
-  public function title($title = null)
+  // Set tbody classes
+  public function tbodyclass($class = null)
   {
-    if ($title)
+    if ($class)
     {
-      $this->attribute(['title' => $title]);
+      if (is_array($class))
+      {
+        foreach ($class as $c)
+        {
+          $this->set('tbodyclasses',$c,'add');
+        }
+      } else {
+        $this->set('tbodyclasses',$class,'add');
+      }
     }
     return $this;
   }
@@ -974,6 +982,17 @@ trait settings
       } else {
         $this->set('theadclasses',$class,'add');
       }
+    }
+    return $this;
+  }
+
+
+  // Set title attribute
+  public function title($title = null)
+  {
+    if ($title)
+    {
+      $this->attribute(['title' => $title]);
     }
     return $this;
   }

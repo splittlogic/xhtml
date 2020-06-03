@@ -1194,10 +1194,13 @@ trait elements
       {
         // Set thead classes
         $this->set('theadclasses',$this->get($z . 'save-table-theadclasses'));
-        
+
         // Set table header
         $this->thead($this->get($z . 'save-table-thead'));
         $thead = $this->html();
+
+        // Set tbody classes
+        $this->set('tbodyclasses',$this->get($z . 'save-table-tbodyclasses'));
 
         // Put rows into a body
         $this->tbody($content);
@@ -1219,6 +1222,18 @@ trait elements
   // Create tbody element
   public function tbody($content = null)
   {
+    // Check for tbody classes
+    if (!is_null($this->get('tbodyclasses')))
+    {
+      if (is_array($this->get('tbodyclasses')))
+      {
+        foreach ($this->get('tbodyclasses') as $class)
+        {
+          $this->class($class);
+        }
+      }
+    }
+
     // Create element
     $this->tag('tbody',$content);
 

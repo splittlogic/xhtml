@@ -41,8 +41,11 @@ trait reset
       $this->set('trs',null);
       $this->set('thead',null);
       $this->set('theadclasses',null);
+      $this->set('tbodyclasses',null);
     } else if ($tag == 'thead') {
       $this->set('theadclasses',null);
+    } else if ($tag == 'tbody') {
+      $this->set('tbodyclasses',null);
     }
 
     // Last variable to reset
