@@ -1242,13 +1242,20 @@ trait elements
 
 
   // Create td element
-  public function td($content = null)
+  public function td($content = null,$th = null)
   {
     // Check for znest value
     $z = $this->checkz();
 
-    // Create element
-    $this->tag('td',$content);
+    // Check for th in row of td
+    if (!is_null($th))
+    {
+      // Create th element
+      $this->tag('th',$content);
+    } else {
+      // Create td element
+      $this->tag('td',$content);
+    }
 
     // Save table cell created
     $this->set($z . 'tds',$this->html(),'add');
