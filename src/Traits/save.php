@@ -28,6 +28,7 @@ trait save
     'extrafields',
     'idtemp',
     'pagelocation',
+    'tablecaption',
     'thead',
     'tbodyclasses',
     'theadclasses',

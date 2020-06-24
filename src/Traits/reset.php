@@ -42,6 +42,7 @@ trait reset
       $this->set('thead',null);
       $this->set('theadclasses',null);
       $this->set('tbodyclasses',null);
+      $this->set('tablecaption',null);
     } else if ($tag == 'thead') {
       $this->set('theadclasses',null);
     } else if ($tag == 'tbody') {

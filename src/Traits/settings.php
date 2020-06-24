@@ -934,6 +934,18 @@ trait settings
   }
 
 
+  // Set table caption
+  public function tablecaption($caption = null)
+  {
+    if ($caption)
+    {
+      $this->caption($caption);
+      $this->set('tablecaption',$this->html());
+    }
+    return $this;
+  }
+
+
   // Set target attribute
   public function target($target = null)
   {

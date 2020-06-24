@@ -1168,8 +1168,9 @@ trait elements
     // Save current settings
     $this->save('table');
 
-    // Declare table header
+    // Declare table header & caption
     $thead = '';
+    $caption = '';
 
     // Check for content
     if (is_null($content))
@@ -1207,13 +1208,19 @@ trait elements
         $content = $this->html();
       }
 
+      // Check if caption is set
+      if (!is_null($this->get($z . 'save-table-tablecaption')))
+      {
+        $caption = $this->get($z . 'save-table-tablecaption');
+      }
+
     }
 
     // Restore settings
     $this->restore('table');
 
     // Create element
-    $this->tag('table',$thead . $content);
+    $this->tag('table',$caption . $thead . $content);
 
     return $this;
   }
